@@ -1,25 +1,26 @@
-import React, {Component} from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css'
+import React, { Component } from 'react';
+import Default from './components/Default';
+import Details from './components/Details'
+import Cart from './components/Cart'
+import ProductList from './components/ProductList'
+import Navbar from './components/Navbar';
 
-// import logo from './logo.svg';
-import './App.css';
-import Login from './components/Login/Login';
-import Dashboard from './components/dashboard/Dashboard';
-import {Route, BrowserRouter as Router} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
+class App extends Component {
 
-class App extends Component{
-
-  render(){
+  render() {
     return (
       <>
-        <Router>
-          <Route path='/' exact strict component={Login} />
-          <Route path='/dashboard' strict component={Dashboard} />
-        </Router>
+        <Navbar />
+        <Switch>
+          <Route to='/' exact component={ProductList} />
+          <Route to='/details' component={Details} />
+          <Route component={Default} />
+        </Switch>
       </>
-    );
-    }
+    )
+  }
 }
 
 export default App;
