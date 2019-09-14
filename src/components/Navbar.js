@@ -12,7 +12,8 @@ export default class Navbar extends Component {
             Creative Commons (Attribution 3.0 Unported);
             https://www.iconfinder.com/Makoto_msk */}
             <Link to="/">
-              <img src={logo} alt="store" className="navbar-brand" />
+              <i className='fas fa-sitemap' style={{fontSize:'20px'}} />
+              {/* <img src={logo} alt="store" className="navbar-brand" /> */}
             </Link>
             <ul className="navbar-nav align-items-center">
               <li className="nav-item ml-5">
@@ -33,3 +34,15 @@ export default class Navbar extends Component {
         )
     }
 }
+
+const NavWrapper = styled.nav`
+  background: var(--mainBlue);
+  .nav-link {
+    color: var(--mainWhite) !important;
+    font-size:2rem;
+    text-transform:capitalize;
+  }
+  @media (max-width: 576px) {
+    .navbar-nav {
+      flex-direction: row !important;
+`;
