@@ -14,9 +14,9 @@ class App extends Component {
       <>
         <Navbar />
         <Switch>
-          <Route to='/' exact component={ProductList} />
-          <Route to='/details' component={Details} />
-          <Route to='/cart' component={Cart}/>
+          <Route exact path="/" component={ProductList} />
+          <Route path="/details" component={Details} />
+          <Route path="/cart" component={Cart} />
           <Route component={Default} />
         </Switch>
       </>
