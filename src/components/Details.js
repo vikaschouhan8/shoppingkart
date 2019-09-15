@@ -39,7 +39,7 @@ export default class Details extends Component {
                         </h4>
                         <h4 className="text-blue">
                           <strong>
-                            price : <span>$</span>
+                            price : <span>INR </span>
                             {price}
                           </strong>
                         </h4>

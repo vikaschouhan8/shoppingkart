@@ -23,7 +23,10 @@ export default class Product extends Component {
                             <button
                                 className="cart-btn"
                                 disabled={inCart ? true : false}
-                            onClick={() => {console.log("Added to cart")}}
+                            onClick={() =>{
+                              value.addToCart(id)
+                              value.openModel(id)
+                            }}
                             >
                                 {inCart ? (<p className="text-capitalize mb-0" disabled>In cart</p>) :
                                     (<i className="fas fa-cart-plus" />
@@ -38,7 +41,7 @@ export default class Product extends Component {
                   <div className="card-footer d-flex justify-content-between">
                       <p className="align-self-center mb-0">{title}</p>
                       <h5 className="text-blue font-italic mb-0">
-                          <span className="mr-1">$</span>
+                          <span className="mr-1">INR </span>
                           {price}
                       </h5>
                   </div>
@@ -85,7 +88,7 @@ const ProductWrapper = styled.div`
     background: var(--lightBlue);
     border: none;
     color: var(--mainWhite);
-    font-size: 1.4rem;
+    font-size: 3rem;
     border-radius: 0.5rem 0 0 0;
     transform: translate(100%, 100%);
     transition: all 1s ease-in-out;

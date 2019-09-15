@@ -18,7 +18,7 @@ export default class Navbar extends Component {
             <ul className="navbar-nav align-items-center">
               <li className="nav-item ml-5">
                 <Link to="/" className="nav-link">
-                  products
+                  Dyson Sphere
                 </Link>
               </li>
             </ul>
@@ -39,7 +39,7 @@ const NavWrapper = styled.nav`
   background: var(--mainBlue);
   .nav-link {
     color: var(--mainWhite) !important;
-    font-size:2rem;
+    font-size:3rem;
     text-transform:capitalize;
   }
   @media (max-width: 576px) {
