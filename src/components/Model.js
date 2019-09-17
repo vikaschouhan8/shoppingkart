@@ -25,7 +25,7 @@ export default class Model extends Component {
                                             <h4>Price: INR {price}</h4>
                                             <Link to='/'>
                                                 <ButtonContainer onClick={()=>{closeModel()}}>
-                                                    Continue shopping
+                                                    store
                                                 </ButtonContainer>
                                             </Link>                                            
                                             <Link to='/cart'>
