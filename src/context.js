@@ -11,7 +11,10 @@ class ProductProvider extends Component {
         detailProduct:detailProduct,
         cart:[],
         modelOpen:false,
-        modelProduct:detailProduct
+        modelProduct:detailProduct,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0
     }
 
     componentDidMount(){
@@ -43,6 +46,36 @@ class ProductProvider extends Component {
         })
     }
 
+    // Cart Mathods
+    increment = (id)=>{
+        console.log("Increment method");
+    }    
+    decrement = (id)=>{
+        console.log("decrement method");
+    }    
+    removeItem = (id)=>{
+        console.log("remove item method");
+    }    
+    clearCart = ()=>{
+        console.log("clear cart method");
+    }
+
+    addTotals = () =>{
+        let subTotal = 0;
+        this.state.cart.map(item=>(subTotal+=item.total));
+        let tax = subTotal * 0.20;
+        tax = parseFloat(tax.toFixed(2));
+        const total = subTotal + tax;
+        this.setState(()=>{
+            return {
+                cartSubTotal:subTotal,
+                cartTax:tax,
+                cartTotal:total
+            }
+        })
+    }
+    // End Cart methods
+
     addToCart = (id) => {
         let tempProducts = [...this.state.products];
         const index = tempProducts.indexOf(this.getItem(id));
@@ -52,11 +85,12 @@ class ProductProvider extends Component {
         product.inCart = true;
         product.count = 1;
         this.setState(()=>{
-            return {
-                products:tempProducts,
-                cart:[...this.state.cart, product]
+                return {products:tempProducts,cart:[...this.state.cart, product]}
+            },
+            ()=>{
+                this.addTotals();
             }
-        })
+        )
     }
 
     // function to open model
@@ -85,7 +119,12 @@ class ProductProvider extends Component {
                 handleDetail:this.handleDetail,
                 addToCart:this.addToCart,
                 openModel:this.openModel,
-                closeModel:this.closeModel
+                closeModel:this.closeModel,
+                // 17 sept: add cart methods
+                increment:this.increment,
+                decrement:this.decrement,
+                removeItem:this.removeItem,
+                clearCart:this.clearCart
             }}>
                 {this.props.children}
             </ProductContext.Provider>
