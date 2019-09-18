@@ -57,7 +57,20 @@ class ProductProvider extends Component {
         console.log("remove item method");
     }    
     clearCart = ()=>{
-        console.log("clear cart method");
+        // we can simply clear the cart by setting state.cart=[] , an empty array
+        // but only doing this will not set the total amount in the cart to zero
+        // as well as we can not add the old items in the cart again, because 
+        // their inCart status is set to true, so call addTotals() and 
+        // setProducts() methods again
+        
+        this.setState(()=>{
+            return {cart:[]}
+        },
+        ()=>{
+            this.setProducts();
+            this.addTotals()
+        }
+        )
     }
 
     addTotals = () =>{
