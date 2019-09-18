@@ -63,7 +63,7 @@ class ProductProvider extends Component {
     addTotals = () =>{
         let subTotal = 0;
         this.state.cart.map(item=>(subTotal+=item.total));
-        let tax = subTotal * 0.20;
+        let tax = subTotal * 0.18; //GST 18%(9% CGST+ 9% SGST)
         tax = parseFloat(tax.toFixed(2));
         const total = subTotal + tax;
         this.setState(()=>{
@@ -85,10 +85,10 @@ class ProductProvider extends Component {
         product.inCart = true;
         product.count = 1;
         this.setState(()=>{
-                return {products:tempProducts,cart:[...this.state.cart, product]}
+                return {products:tempProducts,cart:[...this.state.cart, product]}//products
             },
             ()=>{
-                this.addTotals();
+                this.addTotals();//Cart Item's totle
             }
         )
     }
