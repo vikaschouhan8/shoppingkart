@@ -16,7 +16,7 @@ export default class Cart extends Component {
                         if (cart.length > 0) {
                             return (
                                 <>
-                                <Title name = "My" title = "Cart" style={{fontSize:'30px !important'}} />
+                                <Title name = "my" title = "Cart" style={{fontSize:'30px !important'}} />
                                 <CartColumns />
                                 <CartList value={value} />
                                 <CartTotals value={value} />

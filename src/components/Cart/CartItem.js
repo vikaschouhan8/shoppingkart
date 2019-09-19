@@ -18,21 +18,21 @@ const CartItem = ({item, value}) => {
             </div>
             <div className="col-10 mx-auto col-lg-2">
                 <div className="d-flex justify-content-center">
-                    <span className="btn btn-black mx-1"
+                    <span className="btn btn-black mx-1" disabled={(count>1)?false:true}
+                                                            
                     onClick={()=>decrement(id)}>
                         -
                     </span>
                     <span className="btn btn-black mx-1">{count}</span>
                     <span className="btn btn-black mx-1"
                     onClick={()=>increment(id)}>
-                        -
+                        +
                     </span>
                 </div>
             </div>            
             <div className="col-10 mx-auto col-lg-2">
                 <div className="cart-ico">
-                    <i className="fas fa-trash"
-                     ></i>
+                    <i className="fas fa-trash" onClick={()=>removeItem(id)}></i>
                 </div>
             </div>
             <div className="col-10 mx-auto col-lg-2">

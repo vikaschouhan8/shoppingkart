@@ -7,7 +7,9 @@ import Navbar from './components/Navbar';
 import './App.css'
 import {Route, Switch} from 'react-router-dom'
 import Model from './components/Model';
-
+import Footer from './components/Footer';
+import SearchBox from './components/SearchBox';
+// import Dashborad from './components/Dashboard'
 class App extends Component {
 
   render() {
@@ -21,6 +23,7 @@ class App extends Component {
           <Route component={Default} />
         </Switch>
         <Model />
+        <Footer />
       </>
     )
   }
