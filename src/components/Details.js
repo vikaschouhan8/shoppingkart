@@ -17,7 +17,6 @@ export default class Details extends Component {
                   title,
                   inCart
                 } = value.detailProduct;
-      
                 return (
                   <div className="container py-5">
                     {/* title */}
@@ -57,7 +56,7 @@ export default class Details extends Component {
                             disabled={inCart ? true : false}
                             onClick={() => {
                               value.addToCart(id);
-                              // value.openModal(id);
+                              value.openModel(id);
                             }}
                           >
                             {inCart ? "in cart" : "add to cart"}
