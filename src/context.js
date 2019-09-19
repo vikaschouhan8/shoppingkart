@@ -11,7 +11,7 @@ class ProductProvider extends Component {
         detailProduct:detailProduct,
         cart:[],
         modelOpen:false,
-        modelProduct:detailProduct,
+        modelProduct:[],
         cartSubTotal: 0,
         cartTax: 0,
         cartTotal: 0
@@ -48,13 +48,54 @@ class ProductProvider extends Component {
 
     // Cart Mathods
     increment = (id)=>{
-        console.log("Increment method");
+        let tempProducts = [...this.state.products];
+        const index = tempProducts.indexOf(this.getItem(id));
+        const product = tempProducts[index];
+        product.count+=1;
+        product.total+=product.price
+        this.setState(()=>{
+            return {
+                cart:[...this.state.cart, product]
+            }
+        })
     }    
     decrement = (id)=>{
         console.log("decrement method");
+        let tempProducts = [...this.state.products];
+        const index = tempProducts.indexOf(this.getItem(id));
+        const product = tempProducts[index];
+        if(product.count>1)
+            product.count-=1;
+        product.total-=product.price
+        this.setState(()=>{
+            return {
+                cart:[...this.state.cart, product]
+            }
+        })
+
     }    
+    //19 september
     removeItem = (id)=>{
-        console.log("remove item method");
+        // console.log("remove item method");
+        let tempProducts = [...this.state.products]
+        let tempCart = [...this.state.cart]
+        tempCart = tempCart.filter(item=>item.id!==id);
+
+        const index = tempProducts.indexOf(this.getItem(id));
+        let removedProduct = tempProducts[index]
+        removedProduct.count = 0;
+        removedProduct.total = 0;
+        removedProduct.inCart = false;
+
+        this.setState(()=>{
+            return {
+                cart:[...tempCart],
+                products:[...tempProducts]
+            },
+            ()=>{
+                this.addTotals()
+            }
+        })
     }    
     clearCart = ()=>{
         // we can simply clear the cart by setting state.cart=[] , an empty array
