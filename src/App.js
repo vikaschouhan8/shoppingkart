@@ -10,11 +10,14 @@ import Model from './components/Model';
 import Footer from './components/Footer';
 import SearchBox from './components/SearchBox';
 // import Dashborad from './components/Dashboard'
+import SideNav from './components/SideNav'
 class App extends Component {
 
   render() {
     return (
       <>
+        {/* <SideBar /> */}
+        <SideNav />
         <Navbar />
         <Switch>
           <Route exact path="/" component={ProductList} />
@@ -24,6 +27,7 @@ class App extends Component {
         </Switch>
         <Model />
         <Footer />
+        <SideNav />
       </>
     )
   }

@@ -114,4 +114,9 @@ export const storeProducts = [
     count: 0,
     total: 0
   };
-  
+
+export const sideNavLinks = {
+  a:"home",
+  b:"Mobile",
+  c:"Laptops"
+};

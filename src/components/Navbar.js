@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import {ButtonContainer} from './Button'
-
+import SearchBox from './SearchBox';
+import {ProductConsumer} from "../context"
 export default class Navbar extends Component {
     render() {
         return (
@@ -11,10 +12,20 @@ export default class Navbar extends Component {
             https://www.iconfinder.com/icons/1243689/call_phone_icon
             Creative Commons (Attribution 3.0 Unported);
             https://www.iconfinder.com/Makoto_msk */}
-            <Link to="/">
-              <i className='fas fa-sitemap' style={{fontSize:'20px'}} />
+            {/* <Link to="/"> */}
               {/* <img src={logo} alt="store" className="navbar-brand" /> */}
-            </Link>
+              <ProductConsumer>
+                {data=>{
+                  const {openSideNav} = data;
+                  return (
+                  <i className="fas fa-cloud" style={{fontSize:"20px"}} 
+                  onClick={()=>openSideNav()}
+                  />
+                  )
+                }}
+    
+              </ProductConsumer>
+            {/* </Link> */}
             <ul className="navbar-nav align-items-center">
               <li className="nav-item ml-5">
                 <Link to="/" className="nav-link">
@@ -22,12 +33,13 @@ export default class Navbar extends Component {
                 </Link>
               </li>
             </ul>
+            <SearchBox />
             <Link to="/cart" className="ml-auto">
               <ButtonContainer>
                 <span className="mr-2">
                   <i className="fas fa-cart-plus " />
                 </span>
-                my cart
+                Cart
               </ButtonContainer>
             </Link>
           </NavWrapper>
