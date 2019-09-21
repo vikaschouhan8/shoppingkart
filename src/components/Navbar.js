@@ -18,7 +18,8 @@ export default class Navbar extends Component {
                 {data=>{
                   const {openSideNav} = data;
                   return (
-                  <i className="fas fa-cloud" style={{fontSize:"20px"}} 
+                  <i className="fas fa-bars" 
+                  style={{fontSize:"20px", color:'#fff'}} 
                   onClick={()=>openSideNav()}
                   />
                   )

@@ -16,7 +16,7 @@ class ProductProvider extends Component {
         cartTax: 0,
         cartTotal: 0,
         links:sideNavLinks,
-        sidenavOpen: true
+        sidenavOpen: false
     }
 
     componentDidMount() {
