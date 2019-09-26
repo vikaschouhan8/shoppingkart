@@ -231,7 +231,7 @@ class ProductProvider extends Component {
             </ProductContext.Provider>
         )
     }
-}
+} 
 
 const ProductConsumer = ProductContext.Consumer
 

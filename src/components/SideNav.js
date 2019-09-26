@@ -19,7 +19,7 @@ export default class Model extends Component {
                             <SideNavContainer>
                                 <ul>
                                     <li>
-                                        <Link to="/">
+                                        <Link to="/store">
                                             {a}
                                         </Link>
                                     </li>
