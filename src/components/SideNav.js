@@ -20,10 +20,10 @@ export default class Model extends Component {
                                 <ul>
                                     <li>
                                         <Link to="/store">
-                                            {a}
+                                            Home
                                         </Link>
                                     </li>
-                                    <li>{b}</li>
+                                    <li></li>
                                     <li>{c}</li>
                                     <li>Logout</li>
                                     <li>

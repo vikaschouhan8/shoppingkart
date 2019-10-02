@@ -206,12 +206,8 @@ class ProductProvider extends Component {
     }
 
     openSideNav = id => {
-        let links = this.state.links;
-        // this.setState(()=>{
-        //     return {
-        //         sidenavOpen: !this.state.sidenavOpen
-        //     }
-        // })
+        let links = [...this.state.links];
+
         this.setState(() => {
             return {
                 sidenavOpen: !this.state.sidenavOpen,
