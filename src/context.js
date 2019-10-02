@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import dlog from './Debug'
+
 import { storeProducts, detailProduct, sideNavLinks} from './data'
 
 const ProductContext = React.createContext()
@@ -8,6 +10,7 @@ const ProductContext = React.createContext()
 class ProductProvider extends Component {
     state = {
         products: [],
+        productType: "Laptops",
         detailProduct: detailProduct,
         cart: [],
         modelOpen: false,
@@ -23,9 +26,23 @@ class ProductProvider extends Component {
         this.setProducts()
     }
 
+    getProductType = (productType) => {
+        dlog(productType)
+        this.setState(()=>{
+            return {productType:productType.link}
+        },
+        ()=>{
+            this.setProducts()
+        }
+        )
+        // console.log("getProductType after", productType)
+    }
+
+
     setProducts = () => {
+
         let tempProduct = []
-        storeProducts.forEach(item => {
+        storeProducts[this.state.productType].forEach(item => {
             const singleItems = { ...item }
             tempProduct = [...tempProduct, singleItems]
         })
@@ -136,6 +153,7 @@ class ProductProvider extends Component {
     }
 
     addTotals = () => {
+        dlog("context addTotals")
         let subTotal = 0;
         this.state.cart.map(item => (subTotal += item.total));
         let tax = subTotal * 0.18; //GST 18%(9% CGST+ 9% SGST)
@@ -225,7 +243,9 @@ class ProductProvider extends Component {
                 clearCart: this.clearCart,
                 //21 september
                 openSideNav:this.openSideNav,
-                closeSideNav:this.closeSideNav
+                closeSideNav:this.closeSideNav,
+                //2 oct
+                getProductType:this.getProductType
             }}>
                 {this.props.children}
             </ProductContext.Provider>

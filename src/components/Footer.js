@@ -1,51 +1,14 @@
-import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
-import styled from 'styled-components'
-// import {ButtonContainer} from './Button'
+import React from 'react'
 
-export default class Footer extends Component {
-    render() {
-        return (
-        <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
-                    {/* 
-            https://www.iconfinder.com/icons/1243689/call_phone_icon
-            Creative Commons (Attribution 3.0 Unported);
-            https://www.iconfinder.com/Makoto_msk */}
-            <Link to="/store">
-              <i className='fas fa-sitemap' style={{fontSize:'20px'}} />
-              {/* <img src={logo} alt="store" className="navbar-brand" /> */}
-            </Link>
-            
-            <ul className="navbar-nav align-items-center">
-              <li className="nav-item ml-5">
-                <Link to="/store" className="nav-link">
-                  Copy Right Dyson Sphere Ltd. 2019
-                </Link>
+let Footer = () =>{
+    return (
+      <div className="container-fluid" style={{ background: 'rgba(45,45,45,0.98)', position: 'fixed', bottom: 0 }}>
+        <ul>
+          <li className="text-center" style={{ listStyle: 'none', fontSize: '20px', height: "50px", color: '#fff' }}>
+            all rights reserved
               </li>
-            </ul>
-            {/* <Link to="/cart" className="ml-auto">
-              <ButtonContainer>
-                <span className="mr-2">
-                  <i className="fas fa-cart-plus " />
-                </span>
-                Cart
-              </ButtonContainer>
-            </Link> */}
-          </NavWrapper>
-        )
-    }
+        </ul>
+      </div>
+    )
 }
-
-const NavWrapper = styled.nav`
-  position:fixed;
-  botton:0;
-  background: var(--mainBlue);
-  .nav-link {
-    color: var(--mainWhite) !important;
-    font-size:3rem;
-    text-transform:capitalize;
-  }
-  @media (max-width: 576px) {
-    .navbar-nav {
-      flex-direction: row !important;
-`;
+export default Footer
