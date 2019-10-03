@@ -154,7 +154,7 @@ export const storeProducts = {
       total: 0
     }
   ],
-  "Audio Video":[
+  "Audio/Video":[
     {
       id: 1,
       title: "Bose headphone",
@@ -261,6 +261,6 @@ export const sideNavLinks = [
   "Mobiles",
   "Laptops",
   "Tablets",
-  "Audio Video",
+  "Audio/Video",
   "Accessories"
 ];

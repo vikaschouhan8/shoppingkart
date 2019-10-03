@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { ProductConsumer } from '../context'
-import {ButtonContainer} from './Button'
+
 export default class Model extends Component {
     render() {
         return (

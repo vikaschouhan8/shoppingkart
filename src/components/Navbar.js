@@ -27,43 +27,30 @@ export default class Navbar extends Component {
             <NavWrapper className="navbar navbar-expand-sm  navbar-dark px-sm-5">
 
               <div className="container">
-                {/* <div className="row"> */}
-                {/* <div className="col-sm-12"> */}
-                <div className="body">
-                <div className="box">
-                  <div className="inner">
-                    <span>GadgetKart</span>
-                  </div>
-                  <div className="inner">
-                    <span>GadgetKart</span>
-                  </div>
-                </div>
-                </div>
-
-                <i className="fas fa-bars"
-                  style={{ fontSize: "20px", color: '#fff' }}
-                // onClick={() => openSideNav()}
-                />
+                {/* <i className="fas fa-bars" style={{ fontSize: "20px", color: '#fff' }} onClick={() => openSideNav()} /> */}
                 <ul className=" navbar-nav align-items-center">
                   <li className="nav-item mx-5 pl-5 ">
-                    <Link to="/" className="nav-link">
-                      GadgetKart
+                    <Link to="/">
+                      <div className="body">
+                        <div className="box">
+                          <div className="inner">
+                            <span>GadgetKart</span>
+                          </div>
+                          <div className="inner">
+                            <span>GadgetKart</span>
+                          </div>
+                        </div>
+                      </div>
                     </Link>
                   </li>
                   {NavLink}
+                  <li className="nav-item mx-5 pl-5">
+                    <Link to="/cart" className="nav-link" activestyle={{ color: 'red' }}>
+                      <i className="fas fa-cart-plus " />
+                    </Link>
+                  </li>
                 </ul>
-
-                <Link to="/cart" className="ml-auto">
-                  <span className="mr-2">
-                    <i className="fas fa-cart-plus " />
-                  </span>
-                  Cart¸
-                  </Link>
-                {/* </div> */}
               </div>
-
-              {/* <Logout /> */}
-              {/* </div> */}
             </NavWrapper>
           )
         }}
@@ -88,7 +75,6 @@ const NavWrapper = styled.nav`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: grey;
   }
   
   .box {
@@ -96,7 +82,7 @@ const NavWrapper = styled.nav`
   }
   
   .box .inner {
-    width: 68px;
+    width: 100px;
     height: 60px;
     line-height: 70px;
     font-size: 1.5em;
@@ -108,14 +94,14 @@ const NavWrapper = styled.nav`
   
   .box .inner:first-child {
     background-color: white;
-    color: darkred;
+    color: black;
     transform-origin: right;
     transform: perspective(100px) rotateY(-15deg);
   }
   
   .box .inner:last-child {
-    background-color: black;
-    color: antiquewhite;
+    background-color: grey;
+    color: lightgrey;
     transform-origin: left;
     transform: perspective(100px) rotateY(15deg);
   }
