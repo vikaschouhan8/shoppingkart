@@ -26,7 +26,7 @@ export default class Navbar extends Component {
           return (
             <NavWrapper className="navbar navbar-expand-sm  navbar-dark" style={{height: "20px !important"}}>
 
-              <div className="container">
+              <div className="container containerHeight">
                 <div className="row">
                 {/* <i className="fas fa-bars" style={{ fontSize: "20px", color: '#fff' }} onClick={() => openSideNav()} /> */}
                 <ul className=" navbar-nav align-items-center">
@@ -71,7 +71,9 @@ const NavWrapper = styled.nav`
       flex-direction: column !important;
     }
   }
-
+  .containerHeight{
+    height: -webkit-fill-available;
+  }
   .body {
     height: 20%;
     display: flex;
@@ -84,10 +86,10 @@ const NavWrapper = styled.nav`
   }
   
   .box .inner {
-    width: 100px;
-    height: 60px;
-    line-height: 70px;
-    font-size: 1.5em;
+    width: 80px;
+    height: 40px;
+    line-height: 42px;
+    font-size: 1em;
     font-family: sans-serif;
     font-weight: bold;
     white-space: nowrap;
