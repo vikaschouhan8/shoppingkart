@@ -27,9 +27,10 @@ export default class Navbar extends Component {
             <NavWrapper className="navbar navbar-expand-sm  navbar-dark px-sm-5">
 
               <div className="container">
+                <div className="row">
                 {/* <i className="fas fa-bars" style={{ fontSize: "20px", color: '#fff' }} onClick={() => openSideNav()} /> */}
                 <ul className=" navbar-nav align-items-center">
-                  <li className="nav-item mx-5 pl-5 ">
+                  <li className="nav-item pl-5 ">
                     <Link to="/">
                       <div className="body">
                         <div className="box">
@@ -50,6 +51,7 @@ export default class Navbar extends Component {
                     </Link>
                   </li>
                 </ul>
+                </div>
               </div>
             </NavWrapper>
           )
