@@ -14,7 +14,7 @@ export default class Navbar extends Component {
 
           let NavLink = links.map((link, i) => {
             return (
-              <li key={i} className="nav-item mx-5 pl-5">
+              <li key={i} className="nav-item mx-5 pl-5 col-md-1">
                 <Link to="/" className="nav-link "
                   activestyle={{ color: 'red' }}
                   onClick={() => getProductType({ link })}>
@@ -24,13 +24,13 @@ export default class Navbar extends Component {
             )
           });
           return (
-            <NavWrapper className="navbar navbar-expand-sm  navbar-dark px-sm-5">
+            <NavWrapper className="navbar navbar-expand-sm  navbar-dark" style={{height: "20px !important"}}>
 
               <div className="container">
                 <div className="row">
                 {/* <i className="fas fa-bars" style={{ fontSize: "20px", color: '#fff' }} onClick={() => openSideNav()} /> */}
                 <ul className=" navbar-nav align-items-center">
-                  <li className="nav-item pl-5 ">
+                  <li className="nav-item mx-5 pl-5 col-md-1">
                     <Link to="/">
                       <div className="body">
                         <div className="box">
@@ -45,7 +45,7 @@ export default class Navbar extends Component {
                     </Link>
                   </li>
                   {NavLink}
-                  <li className="nav-item mx-5 pl-5">
+                  <li className="nav-item mx-5 pl-5 col-md 1">
                     <Link to="/cart" className="nav-link" activestyle={{ color: 'red' }}>
                       <i className="fas fa-cart-plus " />
                     </Link>
