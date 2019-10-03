@@ -180,7 +180,7 @@ export const storeProducts = {
       total: 0
     },
     {
-      id: 2,
+      id: 3,
       title: "Sony speaker",
       img: "img/sony-speaker.jpg",
       price: 19,
@@ -218,7 +218,7 @@ export const storeProducts = {
       total: 0
     },
     {
-      id: 2,
+      id: 3,
       title: "iPro",
       img: "img/ipro.jpeg",
       price: 19,
@@ -230,7 +230,7 @@ export const storeProducts = {
       total: 0
     },
     {
-      id: 2,
+      id: 4,
       title: "AirDots",
       img: "img/airdots.jpg",
       price: 19,

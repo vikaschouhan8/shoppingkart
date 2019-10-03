@@ -7,7 +7,7 @@ const CartTotals = ({value, history}) => {
         <div className="container">
             <div className="row">
                 <div className="col-10 mt-2 ml-sm-5 ml-md-auto col-sm-8 text-capitalize text-right">
-                    <Link to="/store">
+                    <Link to="/">
                         <button className="btn btn-outline-danger text-uppercase mp-3 px-5"
                         onClick={()=>clearCart()}>Clear Cart</button>
                     </Link>
