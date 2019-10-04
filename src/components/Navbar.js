@@ -4,9 +4,22 @@ import styled from 'styled-components'
 import { ButtonContainer } from './Button'
 import SearchBox from './SearchBox';
 import { ProductConsumer } from "../context"
+import NavResponsive from './NavResponsive';
 // import Logout from './Logout';
 export default class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menu: false
+    };
+  }
+
+  toggleMenu = () => {
+    this.setState({ menu: !this.state.menu })
+  }
+
   render() {
+    const show = (this.state.menu) ? "show" : "";
     return (
       <ProductConsumer>
         {data => {
@@ -24,36 +37,92 @@ export default class Navbar extends Component {
             )
           });
           return (
-            <NavWrapper className="navbar navbar-expand-sm  navbar-dark" style={{height: "20px !important"}}>
+            <div className="container-fluid">
+              <div className="row">
+                <div className="d-none d-lg-block"  style={{width:"100%"}}>
+                  <NavWrapper className="navbar navbar-expand-sm  navbar-dark" style={{ height: "20px !important" }}>
 
-              <div className="container containerHeight">
-                <div className="row">
-                {/* <i className="fas fa-bars" style={{ fontSize: "20px", color: '#fff' }} onClick={() => openSideNav()} /> */}
-                <ul className=" navbar-nav align-items-center">
-                  <li className="nav-item mx-5 pl-5 col-md-1">
-                    <Link to="/">
-                      <div className="body">
-                        <div className="box">
-                          <div className="inner">
-                            <span>GadgetKart</span>
-                          </div>
-                          <div className="inner">
-                            <span>GadgetKart</span>
-                          </div>
-                        </div>
+                    <div className="container containerHeight">
+                      <div className="row">
+                        {/* <i className="fas fa-bars" style={{ fontSize: "20px", color: '#fff' }} onClick={() => openSideNav()} /> */}
+                        <ul className=" navbar-nav align-items-center">
+                          <li className="nav-item mx-5 pl-5 col-md-1">
+                            <Link to="/">
+                              <div className="body">
+                                <div className="box">
+                                  <div className="inner">
+                                    <span>GadgetKart</span>
+                                  </div>
+                                  <div className="inner">
+                                    <span>GadgetKart</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </Link>
+                          </li>
+                          {NavLink}
+                          <li className="nav-item mx-5 pl-5 col-md 1">
+                            <Link to="/cart" className="nav-link" activestyle={{ color: 'red' }}>
+                              <i className="fas fa-cart-plus " />
+                            </Link>
+                          </li>
+                        </ul>
                       </div>
-                    </Link>
-                  </li>
-                  {NavLink}
-                  <li className="nav-item mx-5 pl-5 col-md 1">
-                    <Link to="/cart" className="nav-link" activestyle={{ color: 'red' }}>
-                      <i className="fas fa-cart-plus " />
-                    </Link>
-                  </li>
-                </ul>
+                    </div>
+                  </NavWrapper>
+                </div>
+                </div>
+              <div className="row">
+                <div className="d-lg-none" style={{width:"100%"}}>
+                  <nav className="navbar navbar-expand-lg navbar-light" style={{ background: "rgba(45, 45, 45, 0.98)" }}>
+                    <a className="navbar-brand" href="/">GadgetKart</a>
+                    <button className="navbar-toggler" type="button" onClick={this.toggleMenu}>
+                      <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className={"collapse navbar-collapse " + show}>
+                      <div className="navbar-nav" style={{ color: "white", fontSize: "30px" }}>
+                        {/* <a className="nav-item nav-link active" href="/" style={{ color: "white", fontSize: "20px" }}>Home <span className="sr-only">(current)</span></a>
+                        <a className="nav-item nav-link" href="/" style={{ color: "white", fontSize: "30px" }}>Features</a>
+                        <a className="nav-item nav-link" href="/" style={{ color: "white", fontSize: "30px" }}>Pricing</a>
+                        <a className="nav-item nav-link" href="/" style={{ color: "white", fontSize: "30px" }}>logout</a> */}
+                      {NavLink}
+                      </div>
+                    </div>
+                  </nav>
+                  {/* <NavResponsive /> */}
+                  {/* <NavWrapper className="navbar navbar-expand-sm  navbar-dark" style={{ height: "20px !important" }}>
+
+                    <div className="container containerHeight">
+                      <div className="row">
+                        <i className="fas fa-bars" style={{ fontSize: "20px", color: '#fff' }} onClick={() => openSideNav()} />
+                        <ul className=" navbar-nav align-items-center">
+                          <li className="nav-item mx-5 pl-5 col-md-1">
+                            <Link to="/">
+                              <div className="body">
+                                <div className="box">
+                                  <div className="inner">
+                                    <span>GadgetKart</span>
+                                  </div>
+                                  <div className="inner">
+                                    <span>GadgetKart</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </Link>
+                          </li>
+                          {NavLink}
+                          <li className="nav-item mx-5 pl-5 col-md 1">
+                            <Link to="/cart" className="nav-link" activestyle={{ color: 'red' }}>
+                              <i className="fas fa-cart-plus " />
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </NavWrapper> */}
                 </div>
               </div>
-            </NavWrapper>
+            </div>
           )
         }}
 
